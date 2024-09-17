@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit each shirt</title>
+</head>
+<body>
+    <a href="/shirts">Back to All Shirts</a>
+
+    <h1>Editing <%= foundShirt.brand %>: <%= foundShirt.type %></h1>
+    <form action="/shirts/<%=foundShirt._id%>?_method=PUT" method="POST">
+
+        <label for="type">Type:</label>
+        <input type="text" name="type" id="type" value="<%= foundShirt.type %>" />
+        <br> <br>
+
+        <label for="color">Color:</label>
+        <input type="text" name="color" id="color" value="<%= foundShirt.color %>" />
+        <br> <br>
+
+        <label for="brand">Brand:</label>
+        <input type="text" name="brand" id="brand" value="<%= foundShirt.brand %>"/>
+        <br> <br>
+
+        <label for="price">Price:</label>
+        <input type="number" name="price" id="price" value="<%= foundShirt.price %>"/>
+        <br> <br>
+
+        <label for="website">Website:</label>
+        <input type="text" name="website" id="website" value="<%= foundShirt.website %>"/>
+        <br> <br>
+    
+        <label for="wantedToBuy">Wanted to buy?</label>
+        <input type="checkbox" 
+        name="wantedToBuy" 
+        id="wantedToBuy" 
+        <% if (foundShirt.wantedToBuy) { %>checked<% } %> />
+        <br> <br>
+
+        <label for="reason">Reason (not) to buy:</label>
+        <input type="text" name="reason" id="reason" value="<%= foundShirt.reason %>" />
+        <br> <br>
+
+        <!-- update the button text -->
+        <button type="submit">Update Shirt Info</button>
+    </form>
+    
+</body>
+</html>

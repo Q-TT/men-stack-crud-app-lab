@@ -35,11 +35,17 @@
                 
 
 
+    <!-- new edit button -->
+    <form action="/shirts/<%=foundShirt._id%>/edit" method="GET">
+        <button type="submit">EDIT</button>
+    </form>
+    <br>
+
     <!-- new delete button -->
     <form action="/shirts/<%=foundShirt._id%>?_method=DELETE" method="POST">
         <button type="submit">DELETE</button>
     </form>
-    <br>
+   
     
 </body>
 </html>
