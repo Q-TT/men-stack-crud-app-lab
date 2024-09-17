@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shirt show page for each shirt</title>
+</head>
+<body>
+    <a href="/shirts">Back to All Shirts</a>
+
+    <h2><%= foundShirt.brand %>: <%= foundShirt.type %></h2>
+    <% if(foundShirt.wantedToBuy){ %>
+        <h3>You should buy this shirt!</h3>
+        <ul>
+            <li><b>Type:</b> <%= foundShirt.type %> </li>   
+            <li><b>Color:</b> <%= foundShirt.color %> </li>
+            <li><b>Brand:</b> <%= foundShirt.brand %></li> 
+            <li><b>Price:</b> $<%= foundShirt.price %></li>
+            <li><b>Website:</b> <a href="<%=foundShirt.website %>" target="_blank">Link</a></li>
+            <li><b>Reason (not) to buy:</b> <%= foundShirt.reason %></li>
+        </ul>
+          
+    <% } else { %>
+        <h3>You should NOT buy this shirt!</h3>
+        <ul>
+            <li><b>Type:</b> <%= foundShirt.type %> </li>   
+            <li><b>Color:</b> <%= foundShirt.color %> </li>
+            <li><b>Brand:</b> <%= foundShirt.brand %></li> 
+            <li><b>Price:</b> $<%= foundShirt.price %></li>
+            <li><b>Website:</b> <a href="<%=foundShirt.website %>" target="_blank">Link</a></li>
+            <li><b>Reason (not) to buy:</b> <%= foundShirt.reason %></li>
+        </ul>
+    <% } %>
+    
+                
+
+
+    <!-- new delete button -->
+    <form action="/shirts/<%=foundShirt._id%>?_method=DELETE" method="POST">
+        <button type="submit">DELETE</button>
+    </form>
+    <br>
+    
+</body>
+</html>

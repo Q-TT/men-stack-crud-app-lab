@@ -51,12 +51,18 @@ app.get("/shirts", async (req,res) => {
     res.render("shirts/index.ejs", {allShirts})
 })
 
+app.get("/shirts/:shirtId", async (req,res) => {
+    const foundShirt = await Shirt.findById(req.params.shirtId)
+    res.render("shirts/show.ejs", {foundShirt})
+
+})
+
 // INDUCES - Index, New, Delete, Update, Create, Edit, Show
 
 ///////////////////////////
 // Server Listener
 ///////////////////////////
-app.listen(3000, () => {
-    console.log("Listening on port 3000");
+app.listen(4000, () => {
+    console.log("Listening on port 4000");
   });
 
