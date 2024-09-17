@@ -78,7 +78,10 @@ app.put("/shirts/:shirtId", async(req,res) => {
     res.redirect(`/shirts/${req.params.shirtId}`);
 })
 
-
+app.delete("/shirts/:shirtId", async (req,res) => {
+    await Shirt.findByIdAndDelete(req.params.shirtId)
+    res.redirect("/shirts")
+})
 
 ///////////////////////////
 // Server Listener
