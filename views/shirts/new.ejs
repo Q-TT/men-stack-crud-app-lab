@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Fruit</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <a href="/">Homepage</a>
+    <a href="/shirts">See All Shirts</a>
+
+    <h1>Add a new shirt!</h1>
+
+    <!-- action and method. The action attribute specifies the URL where the form data should be sent when the form is submitted. In our case, it’s set to /fruits. The method attribute defines the HTTP method the browser should use to send the form data. We’ve set this to POST, which is appropriate for creating new data on the server. -->
+    <form action="/shirts" method="POST">
+        <label for="type">Type:</label>
+        <input type="text" name="type" id="type" />
+        <br> <br>
+
+        <label for="color">Color:</label>
+        <input type="text" name="color" id="color" />
+        <br> <br>
+
+        <label for="brand">Brand:</label>
+        <input type="text" name="brand" id="brand" />
+        <br> <br>
+
+        <label for="price">Price:</label>
+        <input type="number" name="price" id="price" />
+        <br> <br>
+
+        <label for="website">Website:</label>
+        <input type="text" name="website" id="website" />
+        <br> <br>
+    
+        <label for="wantedToBuy">Wanted to buy?</label>
+        <input type="checkbox" name="wantedToBuy" id="wantedToBuy" />
+        <br> <br>
+    
+        <button type="submit">Add Shirt</button>
+    </form>
+  </body>
+</html>
