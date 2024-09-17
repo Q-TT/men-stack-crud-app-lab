@@ -47,6 +47,7 @@ app.post("/shirts", async (req, res) => {
 
 app.get("/shirts", async (req,res) => {
     const allShirts = await Shirt.find();
+    console.log(allShirts)
     res.render("shirts/index.ejs", {allShirts})
 })
 

@@ -10,6 +10,7 @@ const ShirtSchema = new mongoose.Schema({
     price: Number,
     website: String,
     wantedToBuy: Boolean,
+    reason: String,
 })
 
 

@@ -10,22 +10,38 @@
     <a href="/shirts/new">Add A New Shirt</a>
 
 
-    <h1>Here are all shirts:</h1>
+    <h1>Here are all shirts</h1>
     <br>
-    <h2>What you want to buy</h2>
+    <h2>What you want to buy:</h2>
     <ol>
         <% allShirts.forEach((shirt) => { %>
             <% if (shirt.wantedToBuy) { %>
-                <li><%= shirt.type %>; <%= shirt.color %>; <%= shirt.brand %>  </li>
+                <li><b>Type:</b> <%= shirt.type %>;   
+                    <b>Color:</b> <%= shirt.color %>; 
+                    <b>Brand:</b> <%= shirt.brand %>; 
+                    <b>Price:</b> $<%= shirt.price %>;
+                    <b>Website:</b> <a href="<%=shirt.website %>" target="_blank">Link</a>
+                    <br> <br>
+                    <b>Reason (not) to buy:</b> <%= shirt.reason %>
+                    <br><br><br><br>
+                </li>
             <% } %>
         <% }) %>
     </ol>
     <hr>
-    <h2>What you DO NOT want to buy</h2>
+    <h2>What you DO NOT want to buy:</h2>
     <ol>
         <% allShirts.forEach((shirt) => { %>
             <% if (!shirt.wantedToBuy) { %>
-                <li><%= shirt.type %>; <%= shirt.color %>; <%= shirt.brand %>  </li>
+                <li><b>Type:</b> <%= shirt.type %>;   
+                    <b>Color:</b> <%= shirt.color %>; 
+                    <b>Brand:</b> <%= shirt.brand %>; 
+                    <b>Price:</b> $<%= shirt.price %>;
+                    <b>Website:</b> <a href="<%=shirt.website %>" target="_blank">Link</a>
+                    <br> <br>
+                    <b>Reason (not) to buy:</b> <%= shirt.reason %>
+                    <br><br><br><br>
+                </li>
             <% } %>
         <% }) %>
     </ol>
